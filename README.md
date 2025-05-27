@@ -1,6 +1,6 @@
 # Supplementary Materials
 
-This repository contains the supplementary materials for a submitted paper. Please note that this repository is created and maintained under **anonymous** conditions to adhere to the double-blind review process.
+This repository contains the supplementary materials for an accepted SOUPS 2025 paper.
 
 ## Contents
 
