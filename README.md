@@ -14,6 +14,11 @@
 │   ├── UserStudyMaterials.md               # All questions, messages, and SmishX explanations used
 │   └── UserStudyWorkflow.pdf               # Detailed workflow of user study design
 ├── data/                                   # Coming soon
+├── crawlee-project/                        # Webpage Screenshot Taker
+│   ├── crawler.js                          # Webpage Screenshot
+│   └── package.json                        # Node.js package file
+├── main.py                                 # Main function to run sms phishing detector
+├── config.py                               # Config file to set the keys
 └── README.md                               # This file
 ```
 
