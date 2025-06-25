@@ -14,14 +14,14 @@
 │   ├── UserStudyMaterials.md               # All questions, messages, and SmishX explanations used
 │   └── UserStudyWorkflow.pdf               # Detailed workflow of user study design
 ├── data/                                   # Coming soon
-├── main.py                 # Main detection system
-├── config.py               # API configuration
-├── requirements.txt        # Python dependencies
-├── crawlee-project/        # Node.js screenshot module
-│   ├── crawler.js          # Puppeteer screenshot script
-│   ├── package.json        # Node.js dependencies
-│   └── node_modules/       # Node.js packages
-└── README.md              # This file
+├── main.py                                 # Main detection system
+├── config.py                               # API configuration
+├── requirements.txt                        # Python dependencies
+├── crawlee-project/                        # Node.js screenshot module
+│   ├── crawler.js                          # Puppeteer screenshot script
+│   ├── package.json                        # Node.js dependencies
+│   └── node_modules/                       # Node.js packages
+└── README.md                               # This file
 ```
 
 ## Key Files
