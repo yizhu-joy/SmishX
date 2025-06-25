@@ -14,12 +14,14 @@
 │   ├── UserStudyMaterials.md               # All questions, messages, and SmishX explanations used
 │   └── UserStudyWorkflow.pdf               # Detailed workflow of user study design
 ├── data/                                   # Coming soon
-├── crawlee-project/                        # Webpage Screenshot Taker
-│   ├── crawler.js                          # Webpage Screenshot
-│   └── package.json                        # Node.js package file
-├── main.py                                 # Main function to run sms phishing detector
-├── config.py                               # Config file to set the keys
-└── README.md                               # This file
+├── main.py                 # Main detection system
+├── config.py               # API configuration
+├── requirements.txt        # Python dependencies
+├── crawlee-project/        # Node.js screenshot module
+│   ├── crawler.js          # Puppeteer screenshot script
+│   ├── package.json        # Node.js dependencies
+│   └── node_modules/       # Node.js packages
+└── README.md              # This file
 ```
 
 ## Key Files
@@ -33,6 +35,105 @@
 
 - **UserStudy/UserStudyWorkflow.pdf**: This PDF file illustrates the detailed workflow of our user study design. A simplified version of this workflow is included in the paper.
 
+
+## Quick Start to Run the Code
+
+### System Requirements
+
+- **Python 3.8+**
+- **Node.js 16+** (for screenshot capture)
+- **npm** (Node Package Manager)
+
+### Prerequisites
+
+You'll need to obtain the following API keys:
+
+1. **OpenAI API Key** - Get from [OpenAI Platform](https://platform.openai.com/api-keys)
+2. **Jina Reader API Key** - Get from [Jina.ai](https://jina.ai/reader/)
+3. **Google Cloud API Key** - Get from [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
+4. **Google Search Engine ID** - Get from [Programmable Search Engine](https://programmablesearchengine.google.com/controlpanel/all)
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yizhu-joy/SmishX
+cd SmishX
+```
+
+### 2. Set Up Python Environment with Conda
+
+```bash
+# Create conda environment
+conda create -n SmishX python=3.9
+
+# Activate conda environment
+conda activate SmishX
+
+# Install Python dependencies
+pip install -r requirements.txt
+```
+
+### 3. Set Up Node.js Dependencies
+
+```bash
+# Navigate to the crawler directory
+cd crawlee-project
+
+# Install Node.js dependencies
+npm install
+
+# Return to main directory
+cd ..
+```
+
+### 4. Configure API Keys
+
+Edit `config.py` and replace the placeholder values with your actual API keys:
+ ```python
+ # OpenAI API Key
+ openai_api_key = "your_actual_openai_api_key_here"
+ 
+ # Jina Reader API Key
+ jina_api_key = "your_actual_jina_api_key_here"
+ 
+ # Google Cloud API Key
+ google_cloud_API_key = "your_actual_google_cloud_API_key_here"
+ 
+ # Search Engine ID
+ search_engine_ID = "your_actual_search_engine_ID_here"
+```
+
+
+## Usage
+
+### Basic Usage
+
+```python
+from main import SMSPhishingDetector
+from config import openai_api_key, jina_api_key, google_cloud_API_key, search_engine_ID
+
+# Initialize the detector
+detector = SMSPhishingDetector(
+    openai_api_key=openai_api_key,
+    jina_api_key=jina_api_key,
+    google_cloud_API_key=google_cloud_API_key,
+    search_engine_id=search_engine_ID
+)
+
+# Analyze an SMS message
+sms_message = "Your package is ready for delivery. Confirm: https://suspicious-link.com"
+result = detector.detect_sms_phishing(sms_message, output_dir="analysis_results")
+
+print(f"Phishing detected: {result}")
+```
+
+### Running the Example
+
+```bash
+python main.py
+```
 
 ## Dataset
 Coming soon.
