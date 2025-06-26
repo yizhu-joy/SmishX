@@ -76,6 +76,7 @@ pip install -r requirements.txt
 You need to meet the following pre-requisites first:
 - Node.js version 16.0
 - Have NPM installed
+  
 If not certain, confirm the prerequisites by running:
 ```bash
 node -v
