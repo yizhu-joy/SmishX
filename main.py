@@ -6,7 +6,7 @@ import subprocess
 import whois
 from typing import Dict, List, Optional, Tuple
 from openai import OpenAI
-from config import openai_api_key, jina_api_key, google_cloud_API_key, search_engine_ID
+from config import openai_api_key, jina_api_key, google_cloud_API_key, search_engine_ID, http_request_header
 
 
 class SMSPhishingDetector:
@@ -173,11 +173,8 @@ class SMSPhishingDetector:
     def _check_url_validity(self, url: str) -> Tuple[bool, Optional[int]]:
         """Check if URL is valid and accessible."""
         try:
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
-            }
-            response = requests.head(url, allow_redirects=True, headers=headers)
-            
+            response = requests.head(url, allow_redirects=True, headers=http_request_header)
+
             # If the status code is in the range of 200 to 399, the URL is valid
             if response.status_code in range(200, 400):
                 return True, response.status_code
@@ -190,10 +187,7 @@ class SMSPhishingDetector:
     def _expand_url(self, url: str) -> Optional[str]:
         """Expand shortened URLs to their final destination."""
         try:
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-            }
-            response = requests.head(url, allow_redirects=True, headers=headers, timeout=10)
+            response = requests.head(url, allow_redirects=True, headers=http_request_header, timeout=10)
             return response.url
         except requests.RequestException:
             return None
@@ -201,10 +195,7 @@ class SMSPhishingDetector:
     def _get_redirect_chain(self, url: str) -> List[Tuple[str, int]]:
         """Get the complete redirect chain for a URL."""
         try:
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
-            }
-            response = requests.head(url, allow_redirects=True, headers=headers)
+            response = requests.head(url, allow_redirects=True, headers=http_request_header)
 
             response_chain = []
             response_status = []
