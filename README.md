@@ -17,10 +17,7 @@
 ├── main.py                                 # Main detection system
 ├── config.py                               # API configuration
 ├── requirements.txt                        # Python dependencies
-├── crawlee-project/                        # Node.js screenshot module
-│   ├── crawler.js                          # Puppeteer screenshot script
-│   ├── package.json                        # Node.js dependencies
-│   └── node_modules/                       # Node.js packages
+├── crawler.js                              # Puppeteer screenshot script
 └── README.md                               # This file
 ```
 
@@ -58,7 +55,7 @@ You'll need to obtain the following API keys:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yizhu-joy/SmishX
+git clone https://github.com/yizhu-joy/SmishX.git
 cd SmishX
 ```
 
@@ -76,16 +73,23 @@ pip install -r requirements.txt
 ```
 
 ### 3. Set Up Node.js Dependencies
+You need to meet the following pre-requisites first:
+- Node.js version 16.0
+- Have NPM installed
+If not certain, confirm the prerequisites by running:
+```bash
+node -v
+```
+```bash
+npm -v
+```
 
 ```bash
-# Navigate to the crawler directory
-cd crawlee-project
-
 # Install Node.js dependencies
-npm install
+npx crawlee create crawler_proj
 
-# Return to main directory
-cd ..
+# Move crawler.js to crawler_proj
+move crawler.js crawler_proj\
 ```
 
 ### 4. Configure API Keys
@@ -127,6 +131,9 @@ sms_message = "Your package is ready for delivery. Confirm: https://suspicious-l
 result = detector.detect_sms_phishing(sms_message, output_dir="analysis_results")
 
 print(f"Phishing detected: {result}")
+
+# True: Phishing
+# False: Legitimate
 ```
 
 ### Running the Example
