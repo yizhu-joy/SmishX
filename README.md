@@ -80,14 +80,14 @@ You need to meet the following pre-requisites first:
 If not certain, confirm the prerequisites by running:
 ```bash
 node -v
-```
-```bash
 npm -v
 ```
-
+Set up
 ```bash
 # Install Node.js dependencies
 npx crawlee create crawler_proj
+
+# Select **Empty project [JavaScript]** option using arrow keys.
 
 # Move crawler.js to crawler_proj
 move crawler.js crawler_proj\
