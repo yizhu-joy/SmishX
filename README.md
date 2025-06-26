@@ -13,7 +13,7 @@
 │   ├── UserstudyCodebook.md                # Three detailed codebooks for analyzing open-text answers
 │   ├── UserStudyMaterials.md               # All questions, messages, and SmishX explanations used
 │   └── UserStudyWorkflow.pdf               # Detailed workflow of user study design
-├── data/                                   # Coming soon
+├── data/                                   # Manually re-labeled dataset. Find more details in the paper.
 ├── main.py                                 # Main detection system
 ├── config.py                               # API configuration
 ├── requirements.txt                        # Python dependencies
