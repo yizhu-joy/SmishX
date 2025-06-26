@@ -144,7 +144,7 @@ python main.py
 ```
 
 ## Dataset
-Coming soon.
+We manually re-labeled 1200 SMS messages with valid URLs or without URLs from public datasets (see details in our paper). We divided them into three categories: smishing, spam, and legitimate. We also labeled the existence of URLs, emails, and phone numbers in each message.
 
 
 ## Citation
