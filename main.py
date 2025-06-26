@@ -292,7 +292,7 @@ class SMSPhishingDetector:
         """Take screenshot using Node.js crawler."""
         try:
             subprocess.run(
-                ['node', 'crawlee-project/crawler.js', url, screenshot_path],
+                ['node', 'crawler_proj/crawler.js', url, screenshot_path],
                 check=True,
                 capture_output=True,
                 text=True,
