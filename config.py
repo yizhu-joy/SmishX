@@ -10,3 +10,7 @@ jina_api_key = "your_jina_api_key_here"
 google_cloud_API_key = "your_google_cloud_API_key_here"
 # Search Engine ID can be obtained from https://programmablesearchengine.google.com/controlpanel/all
 search_engine_ID = "your_search_engine_ID_here"
+# HTTP User-Agent header that mimics a Chrome browser on Windows 10. 
+http_request_header = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+}
